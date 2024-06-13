@@ -3,13 +3,13 @@ const WebSocket = require('ws');
 const server = new WebSocket.Server({ port: 8080 });
 
 // Initialize game state variables
-let players = [];                // Array to store connected players
-let controlPanel = null;         // Reference to the control panel connection
-let currentGameCode = '';        // Store the current game code
-let votes = {};                  // Object to store votes
-let voteCount = 0;               // Count of total votes received
-let requiredVotes = 0;           // Number of votes required for an action
-let currentQuestion = null;      // Store the current question
+let players = [];                
+let controlPanel = null;         
+let currentGameCode = '';        
+let votes = {};                  
+let voteCount = 0;               
+let requiredVotes = 0;           
+let currentQuestion = null;      
 
 // Set up event listener for new connections to the WebSocket server
 server.on('connection', (ws) => {
@@ -46,7 +46,6 @@ server.on('connection', (ws) => {
             if (voteCount >= requiredVotes) {
                 const mostVotedOption = getMostVotedOption();
                 broadcast({ type: 'result', result: mostVotedOption });
-                // Don't reset votes immediately
                 // resetVotes();
             }
         // Handle request for current votes
