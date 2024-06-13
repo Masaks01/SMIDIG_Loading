@@ -1,17 +1,32 @@
+/*
+    Add event listener for when the DOM content is fully loaded
+*/
 document.addEventListener('DOMContentLoaded', () => {
+    /*
+        Establish a WebSocket connection to the server
+    */
     const ws = new WebSocket('ws://localhost:8080'); 
 
+    /*
+        Select elements for displaying answers, question text, and options container
+    */
     const dAnswerOne = document.getElementById("dAnswer1");
     const dAnswerTwo = document.getElementById("dAnswer2");
     const questionText = document.getElementById("question-text");
     const optionsContainer = document.getElementById("answer-container");
 
+    /*
+        WebSocket open event: request votes and current question
+    */
     ws.addEventListener('open', () => {
         console.log('WebSocket connection opened');
         ws.send(JSON.stringify({ type: 'requestVotes' }));
         ws.send(JSON.stringify({ type: 'requestQuestion' }));
     });
 
+    /*
+        WebSocket message event: handle different types of messages from the server
+    */
     ws.addEventListener('message', (message) => {
         const data = JSON.parse(message.data);
         console.log("Received message:", data);
@@ -24,6 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    /*
+        Function to display the results with votes
+    */
     function displayResults(votes) {
         console.log("Displaying results with votes:", votes);
         const totalVotes = Object.values(votes).reduce((sum, vote) => sum + vote, 0);
@@ -33,6 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
         setScaledText(dAnswerTwo, 'Bruk magi mot trollet', votes['Bruk magi mot trollet'] || 0, totalVotes, maxVotes);
     }
 
+    /*
+        Function to set scaled text for the options based on votes
+    */
     function setScaledText(element, text, voteCount, totalVotes, maxVotes) {
         console.log(`Setting text for ${text} with ${voteCount} votes out of ${totalVotes} total votes.`);
         element.textContent = `${text}`;
@@ -50,6 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
         element.classList.add('animated-scale');
     }
 
+    /*
+        Function to display the current question and its options
+    */
     function displayQuestion(question) {
         console.log("Displaying question:", question);
         questionText.textContent = question.text; // Set the question text
@@ -65,3 +89,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
