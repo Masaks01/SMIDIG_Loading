@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const ws = new WebSocket('ws://localhost:8080'); // Update to your server address if necessary
+    const ws = new WebSocket('ws://localhost:8080'); 
 
     const dAnswerOne = document.getElementById("dAnswer1");
     const dAnswerTwo = document.getElementById("dAnswer2");
