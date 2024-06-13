@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Establish a WebSocket connection to the server
     */
 
-    const ws = new WebSocket('ws://localhost:8080'); // Update to your server address if necessary
+    const ws = new WebSocket('ws://localhost:8080'); 
 
     /*
         Function to handle character selection
@@ -27,9 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             errorMessage.style.color = "red";
             errorMessage.style.display = "block";
         } else {
-            // Get the button that was clicked
             const button = event.target;
-            // Get the background image URL of the button
             const style = window.getComputedStyle(button);
             const backgroundImage = style.backgroundImage;
             const imageURL = backgroundImage.slice(5, -2);
@@ -47,13 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // Check if WebSocket is open and send registration data
             if (ws.readyState === WebSocket.OPEN) {
                 ws.send(JSON.stringify({ type: 'register', ...userData }));
-                localStorage.setItem('isLobbyRegistered', 'true'); // Set flag
+                localStorage.setItem('isLobbyRegistered', 'true'); 
                 window.location.replace("Lobby.html");
             } else {
                 // If WebSocket is not open, wait for it to open and then send registration data
                 ws.addEventListener('open', () => {
                     ws.send(JSON.stringify({ type: 'register', ...userData }));
-                    localStorage.setItem('isLobbyRegistered', 'true'); // Set flag
+                    localStorage.setItem('isLobbyRegistered', 'true'); 
                     window.location.replace("Lobby.html");
                 }, { once: true });
             }
