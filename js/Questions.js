@@ -1,11 +1,23 @@
+/*
+    Add event listener for when the DOM content is fully loaded
+*/
 document.addEventListener('DOMContentLoaded', () => {
+    /*
+        Select elements for vote buttons, options container, vote message, and question text
+    */
     const buttons = document.querySelectorAll('.vote-btn');
     const optionsContainer = document.getElementById('answer-container');
     const voteMessage = document.getElementById('vote-message');
     const questionText = document.getElementById('question-text');
 
+    /*
+        Establish a WebSocket connection to the server
+    */
     const ws = new WebSocket('ws://localhost:8080');
 
+    /*
+        Retrieve user data from localStorage or create new user data
+    */
     let userData = JSON.parse(localStorage.getItem('userData'));
 
     if (!userData) {
@@ -16,8 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('userData', JSON.stringify(userData));
     }
 
+    /*
+        Check if the user has voted by retrieving the status from sessionStorage
+    */
     let hasVoted = sessionStorage.getItem('hasVoted') === 'true';
 
+    /*
+        WebSocket open event: request votes, current question, and reset vote status
+    */
     ws.addEventListener('open', () => {
         console.log('WebSocket connection opened');
         ws.send(JSON.stringify({ type: 'requestVotes' }));
@@ -25,6 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ws.send(JSON.stringify({ type: 'resetVoteStatusRequest' }));
     });
 
+    /*
+        WebSocket message event: handle different types of messages from the server
+    */
     ws.addEventListener('message', (message) => {
         const data = JSON.parse(message.data);
         console.log("Received message:", data);
@@ -39,11 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    /*
+        Function to reset the vote status in sessionStorage
+    */
     function resetVoteStatus() {
         sessionStorage.removeItem('hasVoted');
         hasVoted = false;
     }
 
+    /*
+        Add event listeners to each vote button
+    */
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             if (hasVoted) {
@@ -61,6 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /*
+        Function to display the current question and its options
+    */
     function displayQuestion(question) {
         const questionBox = document.querySelector('.QuestionBox');
         questionBox.textContent = question.text;
@@ -89,10 +119,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /*
+        Add window load event to start the timer
+    */
     window.onload = () => {
         startTimer(30);
     };
 
+    /*
+        Function to start and manage the timer countdown
+    */
     function startTimer(duration) {
         let timer = duration, minutes, seconds;
         const display = document.getElementById('timer-text');
@@ -127,6 +163,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
 
+    /*
+        Function to set the progress ring based on the timer percentage
+    */
     function setProgress(percent) {
         const circle = document.querySelector('.progress-ring__circle');
         const radius = circle.r.baseVal.value;
