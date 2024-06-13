@@ -1,0 +1,82 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    margin-top: 0%;
+    background-image: url('/img/FrontPage-BG.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 100vh; 
+}
+
+#welcome-message {
+    font-family: "Just Me Again Down Here", cursive;
+    font-size: 45px;
+    width: 85%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#avatar-container {
+    border: 5px solid #E8AF1B;
+    border-radius: 20px; /* Increased border-radius for more rounded edges */
+    background-color: #13473D;
+    width: 35%;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#info-text {
+    font-family: "Just Me Again Down Here", cursive;
+    font-size: 40px;
+    color: #E8AF1B;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px black;
+}
+
+#players-div {
+    font-family: "Just Me Again Down Here", cursive;
+    border: 5px solid #E8AF1B;
+    border-radius: 20px; /* Increased border-radius for more rounded edges */
+    width: 80%;
+    text-align: center;
+    padding: 10px;
+    background-color: #95A869;
+}
+
+#player-column {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #E8AF1B;
+    border-radius: 15px; /* Increased border-radius for more rounded edges */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.player img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+    border-radius: 10px; /* Added rounded edges to player images */
+}
+
+.player p {
+    margin: 0;
+    font-size: 15px;
+}

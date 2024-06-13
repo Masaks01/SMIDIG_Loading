@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilbakemelding</title>
+    <!-- Linking the stylesheet for this page -->
+    <link rel="stylesheet" href="css/FeedbackPage.css">
+    <!--preconnect to google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <!--Link to used google font-->
+    <link href="https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="parent-container">
+        <!-- Logo -->
+        <div class="content">
+            <h1>
+                <span>L</span>
+                <span>O</span>
+                <span>A</span>
+                <span>D</span>
+                <span>I</span>
+                <span>N</span>
+                <span>G</span>
+            </h1>
+        </div>
+    </div>
+        <!--Thank you message-->
+        <p class="thanksMessage">Takk for at du spilte! <br> Hvordan var det?</p>
+
+    <!--Feeback buttons with different smiley faces-->
+    <div class="buttons">
+        <button id="one"><img class="happySmiley" src="img/veldigfornøydsmiley.png" alt="Veldig fornøyd"></button>
+        <button id="two"><img class="littleHappySmiley" src="img/fornøydsmiley.png" alt="Fornøyd"></button>
+        <button id="three"><img class="neutralSmiley" src="img/nøytralsmiley.png" alt="Nøytral"></button>
+        <button id="four"><img class="sadSmiley" src="img/mindresursmiley.png" alt="Mindre sur"></button>
+        <button id="five"><img class="angrySmiley" src="img/sursmiley.png" alt="Sur"></button>
+    </div>
+
+    <!--Feedback box for optional comments-->
+    <div class="feedback-box">
+    <form id="feedbackForm">
+        <p class="feedback-comment">Vil du fortelle hva du var fornøyd med eller ikke fornøyd med?</p>
+        <input type="text" class="feedback-input">
+        <button type="submit" class="submit-button">Send</button>
+    </form>
+    </div>
+
+    <!--Thank you message after feecback is submitted-->
+    <div id="feedbackMessage" class="feedback-message">Takk for tilbakemeldingen!</div>
+    
+    <!--Javascript for button onclicks and feedback message element-->
+    <script src="js/FeedbackPage.js">
+
+    </script>
+</body>
+</html>

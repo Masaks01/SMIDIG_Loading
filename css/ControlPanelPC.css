@@ -1,0 +1,86 @@
+body {
+    background-image: linear-gradient(to bottom, #CDE791, #C8E28E, #728151);
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 2rem;
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.left-section, .right-section {
+    width: 50%;
+}
+
+.left-section {
+    text-align: left;
+}
+
+.right-section {
+    text-align: right;
+}
+
+h2, h3, h4, p {
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+h2, h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#result {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+button {
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    background-color: #97C161;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #85a84f;
+}

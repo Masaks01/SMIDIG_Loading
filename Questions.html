@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <!-- Metadata for the document -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spørsmålsrunde</title>
+    <!-- Linking the stylesheet for this page -->
+    <link rel="stylesheet" href="css/Questions.css">
+    <link href='https://fonts.googleapis.com/css?family=Graduate' rel='stylesheet'>
+    <!-- Preconnect to Google Fonts for performance improvement -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <!-- Link to the Google Font used in this page -->
+    <link href="https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&display=swap" rel="stylesheet">
+</head>
+<body class="bg">
+
+     <!--   Header   -->
+     <div class="parent-container">
+        <!--   Logo   -->    
+
+        <div class="content">
+            <h1>
+                <span>L</span>
+                <span>O</span>
+                <span>A</span>
+                <span>D</span>
+                <span>I</span>
+                <span>N</span>
+                <span>G</span>
+            </h1>
+        </div>
+
+    <div class="QuestionBox"></div>
+
+    <!--   Timer container   -->  
+    <div class="timer-container">
+        <svg class="progress-ring" width="120" height="120">
+            <circle class="progress-ring__circle" stroke="green" stroke-width="7" fill="transparent" r="52" cx="60" cy="60"/>
+        </svg>
+        <div class="timer-text" id="timer-text">00:30</div>
+    </div>
+
+    <!--   Buttons container   -->  
+    <div id="answer-container">
+        <!--   Each button contains an image and a text span   -->  
+        <button class="vote-btn" data-option="Kappspis med trollet"> <img src="img/alv.svg" alt="" id="alv"><span id="span1"></span></button>
+        <button class="vote-btn" data-option="Bruk magi mot trollet"> <img src="img/unicorn.svg" alt="" id="unicorn"><span id="span2"></span></button>
+    </div>
+    </div>
+
+    <!--   Link to external JavaScript file   -->  
+    <script src="js/Questions.js"></script>
+    
+</body>
+</html>

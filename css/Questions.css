@@ -1,0 +1,131 @@
+.just-me-again-down-here-regular {
+    font-family: "Just Me Again Down Here", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+    overflow: hidden; 
+}
+
+body.bg {
+    background-image: url("/img/FrontPage-BG.png");
+    background-attachment: fixed;
+    height: 100%; 
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.parent-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #97C161;
+    font-family: 'Inter', sans-serif;
+    font-size: 3.5em; 
+    font-style: italic;
+    letter-spacing: -3px;
+    margin: 0%; 
+    white-space: nowrap;
+}
+
+.QuestionBox {
+    background-color: #88ac6c;
+    border: 5px solid #daac27; 
+    width: 370px;
+    height: auto;
+    min-height: 200px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 60px;
+    color: black;
+    font-family: "Just Me Again Down Here", cursive;
+    font-weight: 590;
+    margin-bottom: 20px;
+    overflow-wrap: break-word;
+}
+
+
+.timer-container {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+    transition: 0.35s stroke-dasharray;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+.timer-text {
+    position: absolute;
+    font-size: 30px;
+    font-weight: 550;
+}
+
+#answer-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    width: 400px;
+    justify-items: center; 
+}
+
+#answer-container button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #88ac6c;
+    border: 5px solid #daac27;
+    font-size: 25px;
+    font-weight: 590;
+    font-family: "Just Me Again Down Here", cursive;
+    padding: 10px; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+#answer-container img {
+    width: 20%;  
+    height: auto;
+    margin-right: 20px;
+}
+
+#answer-container span {
+    flex: 1;  
+    text-align: center;  
+    line-height: 1;
+}
