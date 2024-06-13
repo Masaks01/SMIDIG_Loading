@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         Establish a WebSocket connection to the server
     */
 
-    const ws = new WebSocket('ws://localhost:8080'); // Update to your server address if necessary
+    const ws = new WebSocket('ws://localhost:8080'); 
 
     /*
         Retrieve user data from localStorage
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const avatarImage = document.createElement('img');
         avatarImage.src = userData.avatar;
         avatarImage.alt = "Character Avatar";
-        avatarImage.style.width = "100px"; // Adjust size as needed
+        avatarImage.style.width = "100px"; 
         avatarImage.style.height = "100px";
         avatarContainer.appendChild(avatarImage);
 
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (data.type === 'players') {
             displayPlayers(data.players);
         } else if (data.type === 'redirect') {
-            localStorage.removeItem('hasVoted'); // Clear vote status on redirection
+            localStorage.removeItem('hasVoted'); 
             window.location.href = data.url;
         }
     });
